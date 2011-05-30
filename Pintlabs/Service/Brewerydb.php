@@ -411,8 +411,25 @@ class Pintlabs_Service_Brewerydb
     public function getFeatured()
     {
         $args = array();
-
+        
         return $this->_request('featured/', $args);
+    }
+    
+    /**
+     * Checks the status of the API to see if it is up or not.
+     * 
+     * Returns a user Submitted string and ISO date.
+     * 
+     * @param String $string
+     * @return stdClass object from the request
+     */
+    public function checkStatus($string = NULL)
+    {
+    	$args = array(
+    		'string' => $string
+    	);
+    	
+    	return $this->_request('status/', $args);
     }
 
 
