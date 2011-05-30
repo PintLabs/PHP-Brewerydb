@@ -106,7 +106,7 @@ class Pintlabs_Service_Brewerydb
      * @param int $since Only return breweries created since the given date
      *                   requires [UTC date in YYYY-MM-DD format]
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return stdClass object from the request
      *
@@ -116,7 +116,7 @@ class Pintlabs_Service_Brewerydb
         if ($geo == true) {
             if (is_null($lat) || is_null($lng)) {
                 require_once 'Bn/Service/Brewerydb/Exception.php';
-                throw new Bn_Service_Brewerydb_Exception('If doing a geo search, lat and lng values are required');
+                throw new Pintlabs_Service_Brewerydb_Exception('If doing a geo search, lat and lng values are required');
             }
         }
 
@@ -146,7 +146,7 @@ class Pintlabs_Service_Brewerydb
      * @param int $boxes The array of bounding boxes
      * @param bool $metadata Whether or not to return metadata about the brewery
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return stdClass object from the request
      *
@@ -155,7 +155,7 @@ class Pintlabs_Service_Brewerydb
     {
         if (empty($boxes)) {
             require_once 'Bn/Service/Brewerydb/Exception.php';
-            throw new Bn_Service_Brewerydb_Exception('If doing a map route search, an array of lat and lng bounds are required');
+            throw new Pintlabs_Service_Brewerydb_Exception('If doing a map route search, an array of lat and lng bounds are required');
         }
         
         $this->_transferType = self::POST;
@@ -176,7 +176,7 @@ class Pintlabs_Service_Brewerydb
      * @param bool $metadata Whether or not to return metadata about the brewery
      *
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return stdClass object from the request
      *
@@ -200,7 +200,7 @@ class Pintlabs_Service_Brewerydb
      * @param bool $metadata Whether or not to return metadata about the brewery
      * @param int $since Only return breweries created since the given date
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return stdClass object from the request
      *
@@ -227,7 +227,7 @@ class Pintlabs_Service_Brewerydb
      * @param bool $metadata Whether or not to return metadata about the brewery
      * @param int $since Only return breweries created since the given date
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return stdClass object from the request
      *
@@ -253,7 +253,7 @@ class Pintlabs_Service_Brewerydb
      * @param bool $metadata Whether or not to return metadata about the beer
      * 
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -271,7 +271,7 @@ class Pintlabs_Service_Brewerydb
     /**
      * Returns the list of all beer styles
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -289,7 +289,7 @@ class Pintlabs_Service_Brewerydb
      *
      * @param int $styleId The id of the style to get
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -304,7 +304,7 @@ class Pintlabs_Service_Brewerydb
     /**
      * Returns the list of all beer categories
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -322,7 +322,7 @@ class Pintlabs_Service_Brewerydb
      *
      * @param int $categoryId The id of the category to get
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -338,7 +338,7 @@ class Pintlabs_Service_Brewerydb
     /**
      * Returns the list of all types of glassware
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -355,7 +355,7 @@ class Pintlabs_Service_Brewerydb
      *
      * @param int $glasswareId The id of the glassware to get
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -372,7 +372,7 @@ class Pintlabs_Service_Brewerydb
      *
      * @param int $query The query string to search for
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array from the request
      *
@@ -384,7 +384,7 @@ class Pintlabs_Service_Brewerydb
 
         if ($type != '' && $type != 'beer' && $type != 'brewery') {
             require_once 'Bn/Service/Brewerydb/Exception.php';
-            throw new Bn_Service_Brewerydb_Exception('Type must be either "beer", "brewery", or empty');
+            throw new Pintlabs_Service_Brewerydb_Exception('Type must be either "beer", "brewery", or empty');
         }
 
         $args = array(
@@ -403,7 +403,7 @@ class Pintlabs_Service_Brewerydb
     /**
      * Returns featured brewery and beer id
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return stdClass object from the request
      *
@@ -422,7 +422,7 @@ class Pintlabs_Service_Brewerydb
      * @param string $endpoint The BreweryDb endpoint to use
      * @param array $args key value array of arguments
      *
-     * @throws Bn_Service_Brewerydb_Exception
+     * @throws Pintlabs_Service_Brewerydb_Exception
      *
      * @return array
      */
@@ -469,12 +469,12 @@ class Pintlabs_Service_Brewerydb
         } else if ($this->_transferType == self::PUT) {
             
             require_once 'Bn/Service/Brewerydb/Exception.php';
-            throw new Bn_Service_Brewerydb_Exception('PUT not supported');
+            throw new Pintlabs_Service_Brewerydb_Exception('PUT not supported');
             
         } else if ($this->_transferType == self::DELETE) {
             
             require_once 'Bn/Service/Brewerydb/Exception.php';
-            throw new Bn_Service_Brewerydb_Exception('DELETE not supported');
+            throw new Pintlabs_Service_Brewerydb_Exception('DELETE not supported');
         }
         
         $this->_lastRawResponse = curl_exec($ch);
@@ -483,7 +483,7 @@ class Pintlabs_Service_Brewerydb
 
             $this->_lastRawResponse = curl_error($ch);
             require_once 'Bn/Service/Brewerydb/Exception.php';
-            throw new Bn_Service_Brewerydb_Exception('CURL Error: ' . curl_error($ch));
+            throw new Pintlabs_Service_Brewerydb_Exception('CURL Error: ' . curl_error($ch));
         }
 
         curl_close($ch);
@@ -499,7 +499,7 @@ class Pintlabs_Service_Brewerydb
         // Server provides error messages in http_code and error vars.  If not 200, we have an error.
         if (isset($this->_lastParsedResponse['error'])) {
             require_once 'Bn/Service/Brewerydb/Exception.php';
-            throw new Bn_Service_Brewerydb_Exception('Brewerydb Service Error: ' .
+            throw new Pintlabs_Service_Brewerydb_Exception('Brewerydb Service Error: ' .
                     $this->_lastParsedResponse['error']['message']);
         }
         
