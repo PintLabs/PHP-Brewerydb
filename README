@@ -4,7 +4,7 @@ This service is a simple PHP wrapper for the Brewerydb.com API.
 Usage:
 
 $apiKey = ''; // your Brewerydb api key
-$brewerydb = new Bn_Service_Brewerydb($apiKey);
+$brewerydb = new Pintlabs_Service_Brewerydb($apiKey);
 
 try {
     $results = $brewerydb->getBreweries();
