@@ -1,13 +1,16 @@
-This service is a simple PHP wrapper for the Brewerydb.com API.
+> This service is a simple PHP wrapper for the Brewerydb.com API.
 
 
-Usage:
+## Usage:
 
+```php
 $bdb = new Pintlabs_Service_Brewerydb($apikey);
 $bdb->setFormat('php'); // if you want to get php back.  'xml' and 'json' are also valid options.
+```
 
-Then you can call the API:
+Then you can call the **API**:
 
+```php
 try {
     // The first argument to request() is the endpoint you want to call
     // 'brewery/BrvKTz', 'beers', etc.
@@ -16,3 +19,4 @@ try {
 } catch (Exception $e) {
     $results = array('error' => $e->getMessage());
 }
+```
